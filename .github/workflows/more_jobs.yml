@@ -14,6 +14,7 @@ env:
   DAY_OF_WEEK: Monday
   First_Name: Hampus
   GREETING: Hello 
+  secrets: ${{ secrets.SuperSecret }}
 
 jobs:
   job1:
@@ -26,5 +27,5 @@ jobs:
    runs-on: ubuntu-latest
    steps:
       - name: Print dont like monday
-        run: echo "$GREETING! $First_Name dont like $DAY_OF_WEEK"
+        run: echo "$GREETING! $First_Name dont like $DAY_OF_WEEK. This is $secrets"
    needs: job1
