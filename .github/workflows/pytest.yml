@@ -11,7 +11,7 @@ on:
 
 env:
  APP_NAME: pytest
- GREETINGS: "Hello, my name is hampus and this is my test"
+ GREETINGS: "Hello, 1+1 is 2"
 
 jobs:
   test:
