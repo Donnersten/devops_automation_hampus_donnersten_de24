@@ -6,7 +6,7 @@ on:
    workflow_run:
       workflows: [more_jobs]
       types:
-         - complete
+         - completed
          
 
 env:
