@@ -11,7 +11,7 @@ on:
 
 env:
  APP_NAME: pytest
- GREETINGS: "Hello, my name is hampus"
+ GREETINGS: "Hello, my name is hampus and this is my test"
 
 jobs:
   test:
@@ -34,8 +34,8 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    needs: test   # <-- väntar tills test-jobbet är klart
-    if: success() # <-- körs bara om test-jobbet lyckades
+    needs: test 
+    if: success() 
     steps:
       - uses: actions/checkout@v4
       - name: Build application
