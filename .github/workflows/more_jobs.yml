@@ -14,7 +14,7 @@ env:
   DAY_OF_WEEK: Monday
   First_Name: Hampus
   GREETING: Hello 
-  secrets: ${{ secrets.SuperSecret }}
+  secrets: ${{ secrets.SUPER_SECRET }}
 
 jobs:
   job1:
