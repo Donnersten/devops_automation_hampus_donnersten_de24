@@ -18,7 +18,7 @@ jobs:
     - uses: MaximilianoBz/dockerhub-buildpush@v1.1
       with:
     # Docker Registry Url, eg: docker.io
-        registry_url: docker.io
+        registry_url: dockerhub.io
     # Docker Image Repository Name, eg: username/demo-app
         repository_name: donnersten/app_test
     # Docker Login UserName, from: https://hub.docker.com/
