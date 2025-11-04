@@ -7,26 +7,24 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build and Push to DockerHub
-    - uses: MaximilianoBz/dockerhub-buildpush@v1.1
-      with:
-    # Docker Registry Url, eg: docker.io
-        registry_url: dockerhub.io
-    # Docker Image Repository Name, eg: username/demo-app
-        repository_name: donnersten/app_test
-    # Docker Login UserName, from: https://hub.docker.com/
-        user_name: ${{ secrets.DOCKERHUB_USERNAME }}
-    # Docker Login Access Token, from: https://hub.docker.com/
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-    # Image Build Version
-        image_version: latest
-    # Docker File Directory, Default Current Directory (.)
-        docker_file: .
-          
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build and Push to DockerHub
+        uses: MaximilianoBz/dockerhub-buildpush@v1.1
+        with:
+          # Docker Registry Url (for DockerHub use docker.io)
+          registry_url: docker.io
+          # Docker Image Repository Name (username/repo)
+          repository_name: donnersten/app_test
+          # DockerHub credentials stored in repository secrets
+          user_name: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          # Image tag/version
+          image_version: latest
+          # Directory where Dockerfile is located
+          docker_file: .
